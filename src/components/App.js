@@ -1,21 +1,20 @@
 import React, { Component } from 'react'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 
-import About from './About.js'
-import Contact from './Contact.js'
-import Portfolio from './Portfolio.js'
-import Layout from './Layout.js'
-import Home from './Home.js'
+import About from './About'
+import Contact from './Contact'
+import Portfolio from './Portfolio'
+import Layout from './Layout'
+import Home from './Home'
 
 class App extends Component {
 
   render () {
     return <Router history={browserHistory}>
-      <Route path='/' component={Layout}>
-        <IndexRoute component={Home} />
+      <Route component={Layout}>
+        <Route path='/' component={Home} />
         <Route path='about' component={About} />
         <Route path='portfolio' component={Portfolio} />
-        <Route path='about' component={About} />
         <Route path='contact' component={Contact} />
       </Route>
     </Router>
